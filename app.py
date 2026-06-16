@@ -13,8 +13,24 @@ st.markdown("""
         [data-testid="stSidebar"] {
             background-color: #0e1117 !important;
         }
-        [data-testid="stSidebar"] * {
+        [data-testid="stSidebar"] p,
+        [data-testid="stSidebar"] span,
+        [data-testid="stSidebar"] h1,
+        [data-testid="stSidebar"] h2,
+        [data-testid="stSidebar"] h3,
+        [data-testid="stSidebar"] label,
+        [data-testid="stSidebarNavItems"] a {
             color: #ffffff !important;
+        }
+        [data-testid="stSidebar"] button {
+            background-color: #00b4d8 !important;
+            color: #ffffff !important;
+            border: 1px solid #00b4d8 !important;
+            font-weight: bold !important;
+        }
+        [data-testid="stSidebar"] button:hover {
+            background-color: #0077b6 !important;
+            border: 1px solid #0077b6 !important;
         }
     </style>
 """, unsafe_allow_html=True)
