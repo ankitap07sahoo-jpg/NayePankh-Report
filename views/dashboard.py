@@ -36,8 +36,8 @@ with col_chart1:
     if donations_data:
         df_donations = pd.DataFrame(donations_data, columns=['Purpose', 'Amount'])
         df_donations['Purpose'] = df_donations['Purpose'].fillna('General')
-        # Custom dark pink and dark green theme for the pie chart
-        fig = px.pie(df_donations, values='Amount', names='Purpose', hole=0.4, color_discrete_sequence=["#d81159", "#2d6a4f", "#ff477e", "#40916c"])
+        # Custom dark red and dark green theme for the pie chart
+        fig = px.pie(df_donations, values='Amount', names='Purpose', hole=0.4, color_discrete_sequence=["#8a0303", "#2d6a4f", "#bc0606", "#1b4332"])
         st.plotly_chart(fig, use_container_width=True)
     else:
         st.info("No donation data available.")
