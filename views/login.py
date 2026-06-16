@@ -2,7 +2,7 @@ import streamlit as st
 from utils.auth import login_user
 
 def show():
-    st.markdown("<h1 style='text-align: center; color: #4361ee;'>NayePankh Foundation</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: #00b4d8;'>NayePankh Foundation</h1>", unsafe_allow_html=True)
     st.markdown("<h4 style='text-align: center;'>Admin Dashboard Login</h4>", unsafe_allow_html=True)
     
     st.write("")
