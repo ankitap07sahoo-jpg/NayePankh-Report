@@ -14,7 +14,7 @@ if 'authenticated' not in st.session_state:
 
 if not st.session_state['authenticated']:
     import views.login as login
-    # login.show() is called inside views.login
+    login.show()
 else:
     # Navigation
     from utils.auth import logout_user

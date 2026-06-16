@@ -24,5 +24,3 @@ def show():
                     st.error("Invalid username or password")
                     
         st.info("Default Credentials: admin / nayepankh@2024")
-
-show()
