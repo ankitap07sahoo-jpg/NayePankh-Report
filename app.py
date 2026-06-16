@@ -7,6 +7,18 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# Auto-seed the database if it's empty (specifically for Streamlit Cloud deployments)
+from database.connection import get_session
+from database.models import User
+try:
+    session = get_session()
+    if session.query(User).count() == 0:
+        import seed_data
+        seed_data.seed()
+    session.close()
+except Exception:
+    pass
+
 # Initialize session state
 if 'authenticated' not in st.session_state:
     st.session_state['authenticated'] = False
