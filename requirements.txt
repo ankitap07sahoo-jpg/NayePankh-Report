@@ -1,0 +1,6 @@
+streamlit
+SQLAlchemy
+bcrypt
+plotly
+reportlab
+pandas
