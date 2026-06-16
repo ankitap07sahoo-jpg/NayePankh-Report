@@ -36,7 +36,8 @@ with col_chart1:
     if donations_data:
         df_donations = pd.DataFrame(donations_data, columns=['Purpose', 'Amount'])
         df_donations['Purpose'] = df_donations['Purpose'].fillna('General')
-        fig = px.pie(df_donations, values='Amount', names='Purpose', hole=0.4, color_discrete_sequence=px.colors.sequential.Plasma)
+        # Custom blue theme for the pie chart
+        fig = px.pie(df_donations, values='Amount', names='Purpose', hole=0.4, color_discrete_sequence=["#00b4d8", "#90e0ef", "#03045e", "#0077b6", "#caf0f8"])
         st.plotly_chart(fig, use_container_width=True)
     else:
         st.info("No donation data available.")
@@ -46,7 +47,8 @@ with col_chart2:
     programs_data = session.query(Program.status, func.count(Program.id).label('count')).group_by(Program.status).all()
     if programs_data:
         df_programs = pd.DataFrame(programs_data, columns=['Status', 'Count'])
-        fig2 = px.bar(df_programs, x='Status', y='Count', color='Status', color_discrete_sequence=px.colors.qualitative.Set2)
+        # Custom blue theme for the bar chart
+        fig2 = px.bar(df_programs, x='Status', y='Count', color='Status', color_discrete_sequence=["#00b4d8", "#90e0ef", "#03045e"])
         st.plotly_chart(fig2, use_container_width=True)
     else:
         st.info("No program data available.")
