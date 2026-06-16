@@ -7,6 +7,18 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# Custom CSS to force a dark sidebar but keep inputs white
+st.markdown("""
+    <style>
+        [data-testid="stSidebar"] {
+            background-color: #0e1117 !important;
+        }
+        [data-testid="stSidebar"] * {
+            color: #ffffff !important;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
 # Auto-seed the database if it's empty (specifically for Streamlit Cloud deployments)
 from database.connection import get_session
 from database.models import User
